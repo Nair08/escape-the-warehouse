@@ -1,0 +1,11 @@
+# Solutions, tests and tooling stay on the instructor's computer. Never publish these.
+_private/
+
+# Source material, kept out of the public repository
+ch07-escape-the-warehouse.ipynb
+website-brief.md
+
+.DS_Store
+__pycache__/
+*.pyc
+.pytest_cache/

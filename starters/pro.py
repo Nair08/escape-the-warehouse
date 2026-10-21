@@ -1,0 +1,3 @@
+with open('inventory.csv', 'r') as fin, open('reorder_list_v2.txt', 'w') as fout:
+    # TODO: write the header with fout.write(), then one line per low-stock item
+    ...

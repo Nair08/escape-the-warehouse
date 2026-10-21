@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Escape the Warehouse</title>
+  <meta name="description" content="A Chapter 7 practice escape room: read, parse and write files in Python to escape the Riverbend Supply Co. warehouse.">
+  <link rel="icon" href="assets/padlock.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.21/codemirror.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.21/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.21/mode/python/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.21/addon/edit/matchbrackets.min.js"></script>
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/">
+      <img src="assets/padlock.svg" alt="" width="28" height="28">
+      <span><span class="brand-name">Escape the Warehouse</span><span class="brand-sub">Riverbend Supply Co. · Chapter 7</span></span>
+    </a>
+    <div class="xp">
+      <div class="xp-row"><span id="rank" class="rank"></span><span id="xp-text" class="xp-text"></span></div>
+      <div id="xp-bar" class="xp-bar" role="progressbar" aria-label="Experience points" aria-valuemin="0" aria-valuemax="130" aria-valuenow="0"><div id="xp-fill" class="xp-fill"></div></div>
+    </div>
+    <div class="top-right">
+      <span id="py-status" class="py-status" data-kind="loading">Starting Python…</span>
+      <button id="name-chip" class="name-chip" type="button" title="Edit your name">👷 <span id="name-chip-text"></span> ✎</button>
+    </div>
+  </header>
+  <div class="hazard" aria-hidden="true"></div>
+
+  <div id="fatal" class="fatal" role="alert" hidden>
+    <strong>Python couldn't load.</strong> Check your internet connection, then reload the page.
+    <span id="fatal-detail" class="muted"></span>
+  </div>
+
+  <main id="main" class="main"></main>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+
+  <dialog id="name-dialog" class="dialog">
+    <form id="name-form" method="dialog">
+      <h2>Who's escaping?</h2>
+      <p id="name-intro" class="muted">Your name makes your completion code when you escape. Type it the way your instructor knows it.</p>
+      <label>First name <input id="first-name" autocomplete="given-name" maxlength="60"></label>
+      <label>Last name <input id="last-name" autocomplete="family-name" maxlength="60"></label>
+      <p id="name-error" class="form-error" hidden>Please enter both your first and last name.</p>
+      <div class="dialog-actions">
+        <button id="name-cancel" type="button" class="btn ghost">Cancel</button>
+        <button type="submit" class="btn primary">Save</button>
+      </div>
+    </form>
+  </dialog>
+  <noscript><p class="fatal">This escape room needs JavaScript turned on.</p></noscript>
+</body>
+</html>
